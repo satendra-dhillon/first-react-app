@@ -1,19 +1,21 @@
 import React from 'react';
 
-const GameCard = () => (
+const GameCard = ({game}) => (
     <div className="ui card">
         <div className="image">
-            <span className="ui green ribbon label"> $32.99</span>
+            <span className="ui green ribbon label"> {game.price}</span>
             <img 
-                src="https://microscope-microscope.org/wp-content/uploads/2018/02/microbus-site-icon.jpg" alt="Game Cover"/>
+                src={game.thumbnail} alt="Game Cover"
             />
         </div>
     
         <div className="content">
-            <a href="#" className="header">Quardopolis</a>
+            <a href="#" className="header">
+                {game.name}
+            </a>
             <div className="meta">
-                <i className="icon users" /> 2-4
-                <i className="icon wait" /> 60 min.
+                <i className="icon users" /> {game.players}
+                <i className="icon wait" /> {game.duration} min.
             </div>
         </div>
    
