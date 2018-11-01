@@ -37,11 +37,36 @@ const games = [
     }
 ]
 
-const App = () => (
-    <div className="ui container">
-        <GamesList games = { games} />
-    </div>
-);
+class App extends React.Component {
+
+    // constructor(props){
+    //     super(props);
+    //     this.state = {
+    //         games: []
+    //     }
+    // }
+
+    state = {
+        games: []
+    }
+
+    componentDidMount() {
+        this.setState({ games});
+    }
+    render() {
+        return (
+            <div className="ui container">
+                <GamesList games = { this.state.games} />
+            </div>
+        )
+    }
+}
+
+// const App = () => (
+//     <div className="ui container">
+//         <GamesList games = { games} />
+//     </div>
+// );
 
 
 export default App;
